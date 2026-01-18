@@ -857,10 +857,10 @@ public abstract class PipelineBuilderBase : IPipelineBuilder
         if (ffmpegState.DecoderHardwareAccelerationMode != HardwareAccelerationMode.None)
         {
             _logger.LogDebug(
-                "Forcing {Threads} ffmpeg decoding thread when hardware acceleration is used",
+                "The number of threads for ffmpeg decoding should be {Threads} when hardware acceleration is used",
                 1);
 
-            pipelineSteps.Insert(0, new ThreadCountOption(1));
+            // pipelineSteps.Insert(0, new ThreadCountOption(1));
         }
         else
         {
