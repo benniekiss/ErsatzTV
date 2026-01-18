@@ -862,13 +862,13 @@ public abstract class PipelineBuilderBase : IPipelineBuilder
 
             // pipelineSteps.Insert(0, new ThreadCountOption(1));
         }
-        else
+        // else
+        // {
+        foreach (int threadCount in ffmpegState.ThreadCount)
         {
-            foreach (int threadCount in ffmpegState.ThreadCount)
-            {
-                pipelineSteps.Insert(0, new ThreadCountOption(threadCount));
-            }
+            pipelineSteps.Insert(0, new ThreadCountOption(threadCount));
         }
+        // }
     }
 
     private static void SetSceneDetect(
